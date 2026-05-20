@@ -31,11 +31,11 @@ export default function Home() {
                 alt="Advertise background"
                 className="h-full w-full object-cover object-center brightness-50"
               />
-              <div className="absolute inset-0 bg-gradient-to-l from-black/90 via-black/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent"></div>
             </div>
 
-            <div className="absolute inset-0 flex items-center justify-end p-8 sm:p-12 md:p-16 z-10">
-              <div className="max-w-xl text-right flex flex-col items-end">
+            <div className="absolute inset-0 flex items-center p-8 sm:p-12 md:p-16 z-10">
+              <div className="max-w-2xl">
                 {/* ADVERTISE Tag */}
                 <div className="inline-flex items-center gap-1.5 text-[11px] font-black tracking-widest text-white/80 uppercase">
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -59,8 +59,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Preview Pill on Left Side Now */}
-            <div className="absolute top-1/2 left-[15%] transform -translate-y-1/2 z-10 hidden md:block">
+            {/* Preview Pill on Right Side */}
+            <div className="absolute top-1/2 right-[15%] transform -translate-y-1/2 z-10 hidden md:block">
                <div className="rounded-full border border-white/20 bg-black/40 backdrop-blur-md px-5 py-2 text-xs font-bold text-white tracking-wider cursor-pointer hover:bg-black/60 transition-colors">
                  Preview
                </div>
