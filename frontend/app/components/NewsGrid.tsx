@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Clock } from 'lucide-react';
 import Image from 'next/image';
 
@@ -13,6 +13,7 @@ interface Article {
   description?: string;
   imageUrl: string;
   timeAgo: string;
+  titles?: string[];
 }
 
 export default function NewsGrid() {
@@ -42,13 +43,18 @@ export default function NewsGrid() {
   };
 
   // Two secondary articles (Top-Right)
-  const secondaryArticles: Article[] = [
+  const secondaryArticles: (Article & { titles: string[] })[] = [
     {
       id: 'sec-1',
       category: 'ጤና',
       categoryColor: 'text-emerald-400',
       categoryBg: 'bg-transparent',
       title: 'ያልተጠበቀው የስትሮውበሪ የጤና ጠቀሜታ እና ድንቅ ባህሪዎች',
+      titles: [
+        'ያልተጠበቀው የስትሮውበሪ የጤና ጠቀሜታ',
+        'ሕክምና ሳይንስ ዘርፍ በቀላሉ የሚታወቀው የምርምር ሪፖርት',
+        'የጤና አስተዳደር ስርአቶች ግንዛቤ እና የዘመናዊ እድገት'
+      ],
       imageUrl: '/images/braib_headache.jpg', // local image for health article
       timeAgo: 'ከ 4 ሰዓታት በፊት'
     },
@@ -58,6 +64,11 @@ export default function NewsGrid() {
       categoryColor: 'text-teal-400',
       categoryBg: 'bg-transparent',
       title: 'የሊቲየም-አየር ባትሪዎች የኮምፒውተሮችን እና የኤሌክትሪክ መኪኖችን እድሜ ሊያራዝሙ ይችላሉ',
+      titles: [
+        'የሊቲየም-አየር ባትሪዎች እድሜን ይሟላሉ',
+        'ኤሌክትሪክ መኪናዎች የሚጨምሩ የስራ ጉዞ ፈላጊታ',
+        'ሞባይል ቤት እና AI አካባቢ የሚያሻሽሉ አዳዲስ ተሞክሮዎች'
+      ],
       imageUrl: '/images/mobileapp_poster.jpg', // local image for tech article
       timeAgo: 'ከ 1 ቀን በፊት'
     }
@@ -179,40 +190,7 @@ export default function NewsGrid() {
           {/* Right Column Stacked Cards */}
           <div className="flex flex-col gap-6 lg:gap-8 lg:col-span-4 h-auto lg:h-[500px]">
             {secondaryArticles.map((art) => (
-              <div 
-                key={art.id} 
-                className="group relative flex-1 overflow-hidden rounded-3xl bg-slate-950 shadow-lg"
-              >
-                {/* Background Image */}
-                <div className="absolute inset-0 w-full h-full">
-                  <img
-                    src={art.imageUrl}
-                    alt={art.title}
-                    className="h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-                </div>
-                
-                {/* Content Overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">
-                  <div className="space-y-2.5">
-                    <div>
-                      <span className={`inline-block ${art.categoryBg} ${art.categoryColor} text-xs font-black tracking-wider`}>
-                        {art.category}
-                      </span>
-                    </div>
-                    
-                    <h2 className="text-base sm:text-lg font-black text-white leading-tight line-clamp-2 tracking-wide font-serif italic">
-                      {art.title}
-                    </h2>
-                    
-                    <div className="flex items-center gap-1.5 text-slate-300/80 text-xs font-bold">
-                      <Clock className="h-3.5 w-3.5 text-emerald-400" />
-                      <span>{art.timeAgo}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <SecondaryArticleCard key={art.id} article={art} />
             ))}
           </div>
 
@@ -289,6 +267,60 @@ export default function NewsGrid() {
 }
 
 // Single Article Card Component for the Bottom Row
+function SecondaryArticleCard({ article }: { article: Article & { titles: string[] } }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentTitle = article.titles?.[currentIndex] ?? article.title;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (article.titles ? (prev + 1) % article.titles.length : 0));
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [article.titles]);
+
+  return (
+    <div className="group relative flex-1 overflow-hidden rounded-3xl bg-slate-950 shadow-lg">
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          src={article.imageUrl}
+          alt={currentTitle}
+          className="h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+      </div>
+
+      <div className="absolute inset-0 flex flex-col justify-end p-6 z-10 overflow-hidden">
+        <div className="relative h-full">
+          <div
+            className="absolute inset-0 flex transition-transform duration-700 ease-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {article.titles?.map((title, index) => (
+              <div key={index} className="min-w-full">
+                <div className="space-y-2.5">
+                  <div>
+                    <span className={`inline-block ${article.categoryBg} ${article.categoryColor} text-xs font-black tracking-wider`}>
+                      {article.category}
+                    </span>
+                  </div>
+                  <h2 className="text-base sm:text-lg font-black text-white leading-tight tracking-wide font-serif italic">
+                    {title}
+                  </h2>
+                  <div className="flex items-center gap-1.5 text-slate-300/80 text-xs font-bold">
+                    <Clock className="h-3.5 w-3.5 text-emerald-400" />
+                    <span>{article.timeAgo}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ArticleCard({ article }: { article: Article }) {
   return (
     <div className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg border border-slate-100 transition-all duration-300">
