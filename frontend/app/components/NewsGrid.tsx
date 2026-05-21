@@ -176,44 +176,46 @@ export default function NewsGrid() {
             </div>
           </div>
 
-          {/* Right Column Stacked Cards */}
-          <div className="flex flex-col gap-6 lg:gap-8 lg:col-span-4 h-auto lg:h-[500px]">
-            {secondaryArticles.map((art) => (
-              <div 
-                key={art.id} 
-                className="group relative flex-1 overflow-hidden rounded-3xl bg-slate-950 shadow-lg"
-              >
-                {/* Background Image */}
-                <div className="absolute inset-0 w-full h-full">
-                  <img
-                    src={art.imageUrl}
-                    alt={art.title}
-                    className="h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-                </div>
-                
-                {/* Content Overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">
-                  <div className="space-y-2.5">
-                    <div>
-                      <span className={`inline-block ${art.categoryBg} ${art.categoryColor} text-xs font-black tracking-wider`}>
-                        {art.category}
-                      </span>
-                    </div>
-                    
-                    <h2 className="text-base sm:text-lg font-black text-white leading-tight line-clamp-2 tracking-wide font-serif italic">
-                      {art.title}
-                    </h2>
-                    
-                    <div className="flex items-center gap-1.5 text-slate-300/80 text-xs font-bold">
-                      <Clock className="h-3.5 w-3.5 text-emerald-400" />
-                      <span>{art.timeAgo}</span>
+          {/* Right Column: Horizontal Scroller of Secondary Cards */}
+          <div className="lg:col-span-4 h-auto lg:h-[500px]">
+            <div className="flex gap-6 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-slate-500 scrollbar-track-slate-300/10">
+              {secondaryArticles.map((art) => (
+                <div
+                  key={art.id}
+                  className="snap-start min-w-[320px] lg:min-w-[340px] group relative flex-1 overflow-hidden rounded-3xl bg-slate-950 shadow-lg"
+                >
+                  {/* Background Image */}
+                  <div className="absolute inset-0 w-full h-full">
+                    <img
+                      src={art.imageUrl}
+                      alt={art.title}
+                      className="h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                  </div>
+
+                  {/* Content Overlay */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">
+                    <div className="space-y-2.5">
+                      <div>
+                        <span className={`inline-block ${art.categoryBg} ${art.categoryColor} text-xs font-black tracking-wider`}>
+                          {art.category}
+                        </span>
+                      </div>
+
+                      <h2 className="text-base sm:text-lg font-black text-white leading-tight line-clamp-2 tracking-wide font-serif italic">
+                        {art.title}
+                      </h2>
+
+                      <div className="flex items-center gap-1.5 text-slate-300/80 text-xs font-bold">
+                        <Clock className="h-3.5 w-3.5 text-emerald-400" />
+                        <span>{art.timeAgo}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
         </div>
