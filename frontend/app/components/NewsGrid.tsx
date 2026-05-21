@@ -37,7 +37,7 @@ export default function NewsGrid() {
     categoryBg: 'bg-blue-500 rounded-full',
     title: 'አፕል በ iOS 19 ውስጥ አብዮታዊ የ AI ባህሪያትን ይፋ አደረገ',
     description: 'አዲሱ ዝመና በሁሉም ቤተኛ መተግበሪያዎች ውስጥ የጄኔሬቲቭ ሞዴሎችን ጥልቅ ውህደት ያመጣል።',
-    imageUrl: 'https://images.unsplash.com/photo-1507676184212-d0330a156f31?q=80&w=1200', // Wooden seats matching vibe
+    imageUrl: '/images/Apple_ios.jpg', // local image for Apple iOS article
     timeAgo: 'ከ 3 ሰዓታት በፊት'
   };
 
@@ -49,7 +49,7 @@ export default function NewsGrid() {
       categoryColor: 'text-emerald-400',
       categoryBg: 'bg-transparent',
       title: 'ያልተጠበቀው የስትሮውበሪ የጤና ጠቀሜታ እና ድንቅ ባህሪዎች',
-      imageUrl: 'https://images.unsplash.com/photo-1518635017498-87f514b751ba?q=80&w=600', // Strawberries close-up
+      imageUrl: '/images/braib_headache.jpg', // local image for health article
       timeAgo: 'ከ 4 ሰዓታት በፊት'
     },
     {
@@ -58,7 +58,7 @@ export default function NewsGrid() {
       categoryColor: 'text-teal-400',
       categoryBg: 'bg-transparent',
       title: 'የሊቲየም-አየር ባትሪዎች የኮምፒውተሮችን እና የኤሌክትሪክ መኪኖችን እድሜ ሊያራዝሙ ይችላሉ',
-      imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600', // Modern staircase layout
+      imageUrl: '/images/mobileapp_poster.jpg', // local image for tech article
       timeAgo: 'ከ 1 ቀን በፊት'
     }
   ];
@@ -71,7 +71,7 @@ export default function NewsGrid() {
       categoryColor: 'text-sky-600 border border-sky-200',
       categoryBg: 'bg-sky-50',
       title: 'የአለም መሪዎች በአዲሱ የአየር ንብረት ጥበቃ ስምምነት ላይ በይፋ ተስማሙ',
-      imageUrl: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=600', // Misty landscape
+      imageUrl: '/images/World_governance.jpg', // local image for world governance article
       timeAgo: '2 ቀን በፊት'
     },
     {
@@ -80,7 +80,7 @@ export default function NewsGrid() {
       categoryColor: 'text-indigo-600 border border-indigo-200',
       categoryBg: 'bg-indigo-50',
       title: 'የመጪው ኦሊምፒክ ዝግጅት በክለቦች እና በሀገራት ደረጃ በከፍተኛ ሁኔታ እየተከናወነ ነው',
-      imageUrl: 'https://images.unsplash.com/photo-1473116763269-255448993f66?q=80&w=600', // Wooden deck by sea
+      imageUrl: '/images/olympics.jpg', // local image for sports article
       timeAgo: '6 ሰዓት በፊት'
     },
     {
@@ -89,7 +89,7 @@ export default function NewsGrid() {
       categoryColor: 'text-emerald-600 border border-emerald-200',
       categoryBg: 'bg-emerald-50',
       title: 'የአእምሮ ጤና መታወክ ችግሮች በወጣቶች ላይ ያላቸው ተጋላጭነት በከፍተኛ መጠን እየጨመረ ነው',
-      imageUrl: 'https://images.unsplash.com/photo-1569437061241-a848be43cc82?q=80&w=600', // Jellyfish underwater
+      imageUrl: '/images/braib_headache.jpg', // local image for mental health article
       timeAgo: '10 ሰዓት በፊት'
     },
     {
@@ -98,7 +98,7 @@ export default function NewsGrid() {
       categoryColor: 'text-amber-600 border border-amber-200',
       categoryBg: 'bg-amber-50',
       title: 'የዱር እንስሳት መኖሪያዎችን እና የተፈጥሮ አካባቢዎችን ለመጠበቅ አዳዲስ መንገዶች ተፈለጉ',
-      imageUrl: 'https://images.unsplash.com/photo-1557002666-4174c8afa6b2?q=80&w=600', // Wolf/coyote close-up
+      imageUrl: '/images/wild_animals.jpg', // local image for wildlife article
       timeAgo: '8 ሰዓት በፊት'
     }
   ];
