@@ -37,7 +37,7 @@ export default function NewsGrid() {
     categoryBg: 'bg-blue-500 rounded-full',
     title: 'አፕል በ iOS 19 ውስጥ አብዮታዊ የ AI ባህሪያትን ይፋ አደረገ',
     description: 'አዲሱ ዝመና በሁሉም ቤተኛ መተግበሪያዎች ውስጥ የጄኔሬቲቭ ሞዴሎችን ጥልቅ ውህደት ያመጣል።',
-    imageUrl: '/images/Apple_ios.jpg', // local image for Apple iOS article
+    imageUrl: 'https://picsum.photos/1200/800?random=11', // placeholder image
     timeAgo: 'ከ 3 ሰዓታት በፊት'
   };
 
@@ -49,7 +49,7 @@ export default function NewsGrid() {
       categoryColor: 'text-emerald-400',
       categoryBg: 'bg-transparent',
       title: 'ያልተጠበቀው የስትሮውበሪ የጤና ጠቀሜታ እና ድንቅ ባህሪዎች',
-      imageUrl: '/images/braib_headache.jpg', // local image for health article
+      imageUrl: 'https://picsum.photos/1200/800?random=21', // placeholder image
       timeAgo: 'ከ 4 ሰዓታት በፊት'
     },
     {
@@ -58,7 +58,7 @@ export default function NewsGrid() {
       categoryColor: 'text-teal-400',
       categoryBg: 'bg-transparent',
       title: 'የሊቲየም-አየር ባትሪዎች የኮምፒውተሮችን እና የኤሌክትሪክ መኪኖችን እድሜ ሊያራዝሙ ይችላሉ',
-      imageUrl: '/images/mobileapp_poster.jpg', // local image for tech article
+      imageUrl: 'https://picsum.photos/1200/800?random=22', // placeholder image
       timeAgo: 'ከ 1 ቀን በፊት'
     }
   ];
@@ -71,7 +71,7 @@ export default function NewsGrid() {
       categoryColor: 'text-sky-600 border border-sky-200',
       categoryBg: 'bg-sky-50',
       title: 'የአለም መሪዎች በአዲሱ የአየር ንብረት ጥበቃ ስምምነት ላይ በይፋ ተስማሙ',
-      imageUrl: '/images/World_governance.jpg', // local image for world governance article
+      imageUrl: 'https://picsum.photos/1200/800?random=23', // placeholder image
       timeAgo: '2 ቀን በፊት'
     },
     {
@@ -80,7 +80,7 @@ export default function NewsGrid() {
       categoryColor: 'text-indigo-600 border border-indigo-200',
       categoryBg: 'bg-indigo-50',
       title: 'የመጪው ኦሊምፒክ ዝግጅት በክለቦች እና በሀገራት ደረጃ በከፍተኛ ሁኔታ እየተከናወነ ነው',
-      imageUrl: '/images/olympics.jpg', // local image for sports article
+      imageUrl: 'https://picsum.photos/1200/800?random=24', // placeholder image
       timeAgo: '6 ሰዓት በፊት'
     },
     {
@@ -89,7 +89,7 @@ export default function NewsGrid() {
       categoryColor: 'text-emerald-600 border border-emerald-200',
       categoryBg: 'bg-emerald-50',
       title: 'የአእምሮ ጤና መታወክ ችግሮች በወጣቶች ላይ ያላቸው ተጋላጭነት በከፍተኛ መጠን እየጨመረ ነው',
-      imageUrl: '/images/braib_headache.jpg', // local image for mental health article
+      imageUrl: 'https://picsum.photos/1200/800?random=25', // placeholder image
       timeAgo: '10 ሰዓት በፊት'
     },
     {
@@ -98,7 +98,7 @@ export default function NewsGrid() {
       categoryColor: 'text-amber-600 border border-amber-200',
       categoryBg: 'bg-amber-50',
       title: 'የዱር እንስሳት መኖሪያዎችን እና የተፈጥሮ አካባቢዎችን ለመጠበቅ አዳዲስ መንገዶች ተፈለጉ',
-      imageUrl: '/images/wild_animals.jpg', // local image for wildlife article
+      imageUrl: 'https://picsum.photos/1200/800?random=26', // placeholder image
       timeAgo: '8 ሰዓት በፊት'
     }
   ];
