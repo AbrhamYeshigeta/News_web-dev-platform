@@ -38,7 +38,7 @@ export default function BusinessNewsSection() {
     },
     {
       id: 'sec-2',
-      category: 'ቴክኖሎጂ',
+      category: 'ቢዝነስ',
       categoryColor: 'text-teal-400',
       categoryBg: 'bg-transparent',
       title: 'የሊቲየም-አየር ባትሪዎች የኮምፒውተሮችን እና የኤሌክትሪክ መኪኖችን እድሜ ሊያራዝሙ ይችላሉ',
@@ -47,7 +47,7 @@ export default function BusinessNewsSection() {
     },
     {
       id: 'bot-1',
-      category: 'ዓለም አቀፍ',
+      category: 'ዓለም-አቀፍ',
       categoryColor: 'text-sky-600 border border-sky-200',
       categoryBg: 'bg-sky-50',
       title: 'የአለም መሪዎች በአዲሱ የአየር ንብረት ጥበቃ ስምምነት ላይ በይፋ ተስማሙ',
@@ -83,7 +83,7 @@ export default function BusinessNewsSection() {
     },
     {
       id: 'bot-5',
-      category: 'ሀገር አቀፍ',
+      category: 'ሀገር-ውስጥ',
       categoryColor: 'text-rose-600 border border-rose-200',
       categoryBg: 'bg-rose-50',
       title: 'መንግስት አዲስ ፖሊሲ አቀረበ ለከተማዎች የአገልግሎት ስርዓት ለማሻሻል',
@@ -96,9 +96,9 @@ export default function BusinessNewsSection() {
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 mb-16">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between mb-8">
         <div>
-          <h2 className="mt-3 text-4xl sm:text-3xl font-black text-slate-900 tracking-tight font-serif">
+          <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-wider">
             ቢዝነስ
-          </h2>
+          </h3>
         </div>
         <a href="#" className="inline-flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors">
           ሙሉውን ይመልከቱ
