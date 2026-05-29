@@ -1,0 +1,58 @@
+@import url('https://fonts.cdnfonts.com/css/abyssinica-sil');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Abyssinica SIL", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-page-bg: #ffffff;
+  --color-card-bg: #f8fafc;
+  --color-accent-blue: #2563eb;
+  --color-accent-red: #dc2626;
+  --color-accent-green: #10b981;
+  --color-ui-border: #e2e8f0;
+  --color-text-primary: #0f172a;
+  --color-text-muted: #64748b;
+
+  --shadow-accent: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-page-bg text-text-primary font-sans font-medium selection:bg-accent-blue selection:text-white antialiased;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 80s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar for light theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
