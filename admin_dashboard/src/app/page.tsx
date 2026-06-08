@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation';
 
-export default function Page() {
-  redirect("/admin-dashboard");
+export default function HomePage() {
+  redirect('/admin');
 }

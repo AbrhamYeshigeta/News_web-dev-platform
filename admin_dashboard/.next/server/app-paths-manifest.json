@@ -1,1 +1,13 @@
-{}
+{
+  "/api/admin/subscribers/route": "app/api/admin/subscribers/route.js",
+  "/api/admin/categories/route": "app/api/admin/categories/route.js",
+  "/api/admin/news/route": "app/api/admin/news/route.js",
+  "/api/admin/stats/route": "app/api/admin/stats/route.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/admin/settings/route": "app/api/admin/settings/route.js",
+  "/admin/news/page": "app/admin/news/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/categories/page": "app/admin/categories/page.js",
+  "/admin/settings/page": "app/admin/settings/page.js",
+  "/admin/subscribers/page": "app/admin/subscribers/page.js"
+}
